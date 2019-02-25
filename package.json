@@ -1,6 +1,6 @@
 {
   "name": "@rapin/typeorm",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Rapin Typeorm",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",

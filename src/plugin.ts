@@ -1,6 +1,15 @@
 import { isUndefined } from "lodash"
 import "reflect-metadata"
-import { createConnection, Connection, Repository, MongoRepository } from "typeorm"
+import {
+  createConnection,
+  Connection,
+  Repository,
+  MongoRepository,
+  getMongoManager,
+  getManager,
+  EntityManager,
+  MongoEntityManager
+} from "typeorm"
 
 export class DB {
   private connection: Connection
@@ -44,6 +53,14 @@ export class DB {
     }
   }
 
+  get manager(): EntityManager | MongoEntityManager {
+    if (this.type === 'mongodb') {
+      return getMongoManager()
+    } else {
+      return getManager()
+    }
+  }
+
   public async findOne(table: string, conditions?, options?) {
     const repository = this.repository(table)
 
@@ -65,6 +82,7 @@ export class DB {
 
   public async save(table: string, entity) {
     const repository = this.repository(table)
+
     const result = await repository.save(entity)
     return result
   }

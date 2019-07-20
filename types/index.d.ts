@@ -1,4 +1,3 @@
-import Rapin from 'rapin'
 import {
   Repository,
   MongoRepository,
@@ -7,7 +6,7 @@ import {
   DeleteResult
 } from 'typeorm'
 
-export declare class DB {
+export declare interface DB {
   queryBuilder(table: string): import("typeorm").SelectQueryBuilder<{}>;
   queryMany(query: any): Promise<Object>;
   queryCount(query: any): Promise<Object>;
@@ -21,8 +20,8 @@ export declare class DB {
 }
 
 declare module "rapin" {
-  interface Base {
-    db: DB;
+  interface Context {
+    db: DB
   }
 }
 

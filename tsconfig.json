@@ -1,8 +1,6 @@
 {
   "compilerOptions": {
-    "types": [
-      "node"
-    ],
+    "types": ["node"],
     "module": "commonjs",
     "moduleResolution": "node",
     "experimentalDecorators": true,
@@ -11,22 +9,12 @@
     "sourceMap": true,
     "target": "es6",
     "outDir": "./lib",
-    "declaration": true,
+    "typeRoots": ["./types", "./node_modules/@types"],
     "baseUrl": ".",
     "paths": {
-      "*": [
-        "*",
-        "system/*",
-        "src/*",
-        "system/helper/*"
-      ]
+      "*": ["*", "src/*"]
     }
   },
-  "include": [
-    "src/**/*",
-    "system/**/*"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
 }

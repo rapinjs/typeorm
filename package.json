@@ -12,13 +12,13 @@
     "build": "rimraf lib && tsc -p ."
   },
   "dependencies": {
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.15",
     "reflect-metadata": "^0.1.13",
-    "typeorm": "^0.2.13"
+    "typeorm": "^0.2.18"
   },
   "devDependencies": {
     "rimraf": "^2.6.3",
-    "tslint": "^5.13.0",
-    "typescript": "^3.3.3333"
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.3"
   }
 }

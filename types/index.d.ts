@@ -3,25 +3,24 @@ import {
   MongoRepository,
   EntityManager,
   MongoEntityManager,
-  DeleteResult
+  DeleteResult,
 } from 'typeorm'
 
 export declare interface DB {
-  queryBuilder(table: string): import("typeorm").SelectQueryBuilder<{}>;
-  queryMany(query: any): Promise<Object>;
-  queryCount(query: any): Promise<Object>;
-  repository(table: string): Repository<any> | MongoRepository<any>;
+  queryBuilder(table: string): import('typeorm').SelectQueryBuilder<{}>
+  queryMany(query: any): Promise<Object>
+  queryCount(query: any): Promise<Object>
+  repository<T>(table: string): T
   manager(): EntityManager | MongoEntityManager
-  findOne(table: string, conditions?: any, options?: any): Promise<any>;
-  find(table: string, options?: any): Promise<any[]>;
-  create(table: string): any;
-  save(table: string, entity: any): Promise<any>;
-  delete(table: string, options: any): Promise<DeleteResult>;
+  findOne(table: string, conditions?: any, options?: any): Promise<any>
+  find(table: string, options?: any): Promise<any[]>
+  create(table: string): any
+  save(table: string, entity: any): Promise<any>
+  delete(table: string, options: any): Promise<DeleteResult>
 }
 
-declare module "rapin" {
+declare module 'rapin' {
   interface Context {
     db: DB
   }
 }
-

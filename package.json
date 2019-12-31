@@ -17,7 +17,7 @@
     "build": "rimraf lib && tsc -p ."
   },
   "dependencies": {
-    "@types/node": "^12.6.8",
+    "@types/node": "^13.1.2",
     "lodash": "^4.17.15",
     "reflect-metadata": "^0.1.13",
     "typeorm": "^0.2.18"

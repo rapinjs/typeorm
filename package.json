@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "rimraf": "^2.6.3",
-    "tslint": "^5.18.0",
+    "tslint": "^6.0.0",
     "typescript": "^3.5.3"
   }
 }

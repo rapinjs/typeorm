@@ -23,7 +23,7 @@
     "typeorm": "^0.2.18"
   },
   "devDependencies": {
-    "rimraf": "^2.6.3",
+    "rimraf": "^3.0.1",
     "tslint": "^5.18.0",
     "typescript": "^3.5.3"
   }

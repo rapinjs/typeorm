@@ -7,7 +7,7 @@ import {
   EntitySchema,
 } from 'typeorm'
 
-export declare interface DB {
+export declare interface TypeORM {
   queryBuilder(table: string): import('typeorm').SelectQueryBuilder<{}>
   queryMany(query: any): Promise<Object>
   queryCount(query: any): Promise<Object>
@@ -23,6 +23,6 @@ export declare interface DB {
 
 declare module 'rapin' {
   interface Context {
-    db: DB
+    typeorm: TypeORM
   }
 }

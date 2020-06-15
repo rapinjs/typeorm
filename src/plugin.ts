@@ -9,6 +9,7 @@ import {
   getManager,
   EntityManager,
   MongoEntityManager,
+  EntitySchema,
 } from 'typeorm'
 
 export class DB {
@@ -45,12 +46,12 @@ export class DB {
     return !isUndefined(result) ? result : 0
   }
 
-  public repository(table: string): Repository<any> | MongoRepository<any> {
-    if (this.type === 'mongodb') {
-      return this.connection.getMongoRepository(table)
-    } else {
-      return this.connection.getRepository(table)
-    }
+  public repository<T>(target: string | Function | (new () => T) | EntitySchema<T>): Repository<T> {
+    return this.connection.getRepository(target)
+  }
+
+  public mongoRepository<T>(target: string | Function | (new () => T) | EntitySchema<T>): MongoRepository<T> {
+    return this.connection.getMongoRepository(target)
   }
 
   get manager(): EntityManager | MongoEntityManager {

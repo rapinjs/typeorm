@@ -1,6 +1,6 @@
 {
   "name": "@rapin/typeorm",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Rapin Typeorm",
   "main": "lib/index.js",
   "typings": "types/index.d.ts",
@@ -17,14 +17,14 @@
     "build": "rimraf lib && tsc -p ."
   },
   "dependencies": {
-    "@types/node": "^13.5.2",
+    "@types/node": "^14.0.13",
     "lodash": "^4.17.15",
     "reflect-metadata": "^0.1.13",
-    "typeorm": "^0.2.18"
+    "typeorm": "^0.2.25"
   },
   "devDependencies": {
-    "rimraf": "^3.0.1",
-    "tslint": "^5.18.0",
-    "typescript": "^3.5.3"
+    "rimraf": "^3.0.2",
+    "tslint": "^6.1.2",
+    "typescript": "^3.9.5"
   }
 }
